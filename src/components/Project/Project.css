@@ -13,7 +13,8 @@
 }
 
 .project:hover {
-  border: 3px solid var(--indigo);
+  /* border: 3px solid var(--indigo); */
+  transform: scale(1.1);
 }
 
 .project__icon > img {

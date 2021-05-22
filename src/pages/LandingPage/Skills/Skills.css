@@ -30,4 +30,9 @@
   padding: 15px;
   object-fit: contain;
   height: 50px;
+  transition: 0.25s ease-in-out;
+}
+
+.skills__badges > img:hover {
+  transform: scale(1.1);
 }
