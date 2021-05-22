@@ -16,6 +16,7 @@ const Experience = () => {
           certificateUrl=""
           designation="Frontend SDE Intern"
           websiteUrl="https://razorpay.com/"
+          skills={["ReactJS", "GraphQL", "HTML", "CSS"]}
           description="So I'm currently a Frontend SDE Intern @Razorpay."
         />
         <Card
@@ -23,9 +24,10 @@ const Experience = () => {
           companyName="Correlations.Ai"
           startDate="18 Dec, 2020"
           endDate="18 Feb, 2021"
-          certificateUrl="https://razorpay.com/"
+          certificateUrl=""
           designation="SWE Intern"
           websiteUrl="https://correlations.ai/#/home"
+          skills={["ReactJS", "MongoDB", "Flask", "HTML", "CSS", "Redux"]}
           description="During this period I worked on Login Infra and Mail Services for Correlations.Ai. I worked on various frameworks including ReactJS, Python, Flask, MongoDB."
         />
         <Card
@@ -36,6 +38,16 @@ const Experience = () => {
           certificateUrl=""
           designation="Technical Conternt Writer Intern"
           websiteUrl="https://auth.geeksforgeeks.org/user/divyansh1802intern/articles"
+          skills={[
+            "Python",
+            "Database",
+            "MySQL",
+            "ReactJS",
+            "Firebase",
+            "Flask",
+            "Git",
+            "Linked List",
+          ]}
           description="As a Technical Content Writer I've published 9 artices till date and improved two pre-existing articles on GeeksforGeeks in various technologies like, Python, Flask, ReactJS."
         />
         <Card
@@ -46,6 +58,7 @@ const Experience = () => {
           certificateUrl=""
           designation="UI/UX Intern"
           websiteUrl="https://play.google.com/store/apps/details?id=com.tag_hive.saathi.saathi&hl=en_IN&gl=US"
+          skills={["Adobe XD"]}
           description="In this internship for I worked on the UI of ClassSaathi app which is available on Playstore for free."
         />
       </div>

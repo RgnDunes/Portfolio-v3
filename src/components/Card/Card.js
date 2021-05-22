@@ -10,6 +10,7 @@ const Card = ({
   designation,
   certificateUrl,
   websiteUrl,
+  skills,
   description,
 }) => {
   return (
@@ -30,6 +31,12 @@ const Card = ({
         </h6>
         <br />
         <p>{description}</p>
+        <br />
+        <div className="card__skills">
+          {skills.length > 0
+            ? skills.map((skill) => <div className="card__skill">{skill}</div>)
+            : ""}
+        </div>
       </div>
       <a href={certificateUrl} target="_blank">
         <button className="btn corousal_btn">View Docs</button>

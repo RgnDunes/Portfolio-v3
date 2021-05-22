@@ -11,7 +11,6 @@
 }
 
 .card:before {
-  /* content: ""; */
   width: 50%;
   height: 100%;
   position: absolute;
@@ -23,7 +22,6 @@
 }
 
 .card > .card__icon {
-  /* position: relative; */
   width: 80px;
   height: 80px;
   color: #fff;
@@ -37,28 +35,25 @@
   font-weight: 700;
   transition: 3s;
 }
+
 .card:nth-of-type(even) > .card__icon {
   box-shadow: 0 0 0 0 #0082e6;
   background: #0082e6;
 }
+
 .card:nth-of-type(even):hover > .card__icon {
-  box-shadow: 0 0 0 600px #0082e6;
+  box-shadow: 0 0 0 800px #0082e6;
 }
 
 .card:nth-of-type(odd) > .card__icon {
   box-shadow: 0 0 0 0 #2c3e50;
   background: #2c3e50;
 }
+
 .card:nth-of-type(odd):hover > .card__icon {
-  box-shadow: 0 0 0 600px #2c3e50;
+  box-shadow: 0 0 0 800px #2c3e50;
 }
-/* .card:nth-child(3) > .card__icon {
-  box-shadow: 0 0 0 0 #0082e6;
-  background: #0082e6;
-}
-.card:nth-child(3):hover > .card__icon {
-  box-shadow: 0 0 0 400px #0082e6;
-} */
+
 .card .card__contentbox {
   position: relative;
   z-index: 1;
@@ -67,14 +62,13 @@
   padding-bottom: 20px;
   border-radius: 11px;
 }
+
 .card:nth-of-type(odd):hover .card__contentbox {
   color: #2c3e50;
-  /* padding: 5px; */
 }
 
 .card:nth-of-type(even):hover .card__contentbox {
   color: #0082e6;
-  /* padding: 5px; */
 }
 
 .card .card__contentbox h3 {
@@ -107,9 +101,26 @@ a {
   position: relative;
   overflow: hidden;
   margin-top: 30px;
+  box-shadow: 10px 10px 10px 3px rgb(21 21 21 / 20%);
 }
 
 .card:nth-of-type(even):hover > a > .btn {
   color: #2c3e50;
   border: 1px solid #2c3e50;
+}
+
+.card__skills {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.card__skill {
+  padding: 10px;
+  margin-bottom: 5px;
+  text-align: center;
+  box-shadow: 10px 10px 10px 3px rgb(21 21 21 / 20%);
+  background-color: #dee2ff;
+  border-radius: 999px;
 }
