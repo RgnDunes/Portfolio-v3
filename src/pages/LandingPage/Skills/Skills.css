@@ -1,0 +1,33 @@
+.skills {
+  display: grid;
+  width: 100vw;
+  place-items: center;
+}
+
+.skills > h2 {
+  text-align: center;
+  color: var(--primary);
+  font-size: calc(20px + 5vw);
+  font-weight: 900;
+  -webkit-text-stroke: 1px var(--indigo);
+  text-shadow: -1px 1px 2px #23430c, 1px 1px 2px #23430c, 1px -1px 0 #23430c,
+    -1px -1px 0 #23430c;
+}
+
+.skills__badgesContainer {
+  width: 60vw;
+}
+
+.skills__badges {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.skills__badges > img {
+  padding: 15px;
+  object-fit: contain;
+  height: 50px;
+}
