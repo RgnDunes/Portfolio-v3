@@ -1,7 +1,7 @@
 .reach {
-  display: flex;
+  display: grid;
+  place-items: center;
   width: 100vw;
-  flex-direction: column;
 }
 
 .reach > h2 {
@@ -17,8 +17,8 @@
 
 .reach__content {
   display: flex;
-  place-items: center;
   justify-content: space-evenly;
+  align-items: center;
   width: 80%;
   padding: 20px;
   border-radius: 13px;

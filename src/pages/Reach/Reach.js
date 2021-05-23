@@ -12,22 +12,22 @@ const Reach = () => {
   const [message, setMessage] = useState("");
 
   return (
-    <div className="reach">
-      <div className="reach__left">
+    <div className="contact">
+      <div className="contact__left">
         <a href="https://www.linkedin.com/in/rgndunes/" target="_blank">
-          <button className="reach__contentLink">
+          <button className="contact__contentLink">
             <img src={Linkedin} alt="" />
           </button>
         </a>
 
         <a href="https://github.com/RgnDunes" target="_blank">
-          <button className="reach__contentLink">
+          <button className="contact__contentLink">
             <img src={Github} alt="" />
           </button>
         </a>
 
         <a href="mailto:singh.divyansh1802@gmail.com" target="_blank">
-          <button className="reach__contentLink">
+          <button className="contact__contentLink">
             <img src={Gmail} alt="" />
           </button>
         </a>
@@ -36,18 +36,18 @@ const Reach = () => {
           href="https://api.whatsapp.com/send?phone=917394926646"
           target="_blank"
         >
-          <button className="reach__contentLink">
+          <button className="contact__contentLink">
             <img src={Whatsapp} alt="" />
           </button>
         </a>
       </div>
-      <div className="reach__right">
-        <form className="reach__form" action="#">
+      <div className="contact__right">
+        <form className="contact__form" action="#">
           <input
             type="text"
             name="name"
             value={name}
-            placeholder="Enter your name : "
+            placeholder="Enter your firstname : "
             required
             onChange={(e) => setName(e.target.value)}
             pattern="^[A-Za-z]+"
