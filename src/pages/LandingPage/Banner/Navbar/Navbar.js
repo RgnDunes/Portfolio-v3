@@ -21,7 +21,10 @@ const Navbar = () => {
         <Link to="/hobbies">
           <NavbarOption icon="❉" text="Hobbies" />
         </Link>
-        <NavbarOption icon="☎️ " text="Reach++" />
+        <Link to="/reach">
+          <NavbarOption icon="☎️ " text="Reach++" />
+        </Link>
+
         <NavbarOption icon="" text="" />
       </div>
     </div>

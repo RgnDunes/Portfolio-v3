@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 import "./Projects.css";
 import Project from "../../../components/Project/Project";
@@ -167,9 +168,9 @@ const Projects = () => {
           projectType="Solo"
         />
       </div>
-      <a href="">
+      <Link to="/projects">
         <button className="projects__button">More Projects...</button>
-      </a>
+      </Link>
     </div>
   );
 };

@@ -1,11 +1,12 @@
 .reach {
-  display: grid;
+  display: flex;
   width: 100vw;
-  place-items: center;
+  flex-direction: column;
 }
 
 .reach > h2 {
-  text-align: center;
+  display: grid;
+  place-items: center;
   color: var(--primary);
   font-size: calc(20px + 5vw);
   font-weight: 900;
