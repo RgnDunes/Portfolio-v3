@@ -6,7 +6,7 @@ import Card from "../../../components/Card/Card";
 const Experience = () => {
   return (
     <div className="experience">
-      <h2>Experiences</h2>
+      <h2>👨‍💻 Experiences 👨‍💻</h2>
       <div className="experience__wrapper">
         <Card
           index="01"

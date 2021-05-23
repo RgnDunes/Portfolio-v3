@@ -4,6 +4,7 @@ import Skills from "./Skills/Skills";
 import Experience from "./Experience/Experience";
 import Projects from "./Projects/Projects";
 import Certificates from "./Certificates/Certificates";
+import Reach from "./Reach/Reach";
 
 const LandingPage = () => {
   return (
@@ -13,6 +14,7 @@ const LandingPage = () => {
       <Experience />
       <Projects />
       <Certificates />
+      <Reach />
     </div>
   );
 };

@@ -13,8 +13,8 @@ const Navbar = () => {
       <div className="navbar__navItems">
         <NavbarOption icon="🏚" text="Home" />
         <NavbarOption icon="📂" text="Projects" />
-        <NavbarOption icon="📜" text="Certificates" />
-        <NavbarOption icon="📱" text="Reach++" />
+        <NavbarOption icon="❉" text="Hobbies" />
+        <NavbarOption icon="☎️ " text="Reach++" />
         <NavbarOption icon="" text="" />
       </div>
     </div>

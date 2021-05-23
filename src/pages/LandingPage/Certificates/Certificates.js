@@ -15,7 +15,7 @@ import HashCode from "../../../assets/images/certificates/hashCode.png";
 const Certificates = () => {
   return (
     <div className="certificates">
-      <h2>Certificates</h2>
+      <h2>📄 Certificates 📄</h2>
       <div className="certificates__content">
         <div class="image">
           <img src={Correlations} alt="" />

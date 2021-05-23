@@ -23,7 +23,7 @@ import SQLAlchemy from "../../../assets/images/skills/sqlalchemy.png";
 const Skills = () => {
   return (
     <div className="skills">
-      <h2>Languages, Tools & Frameworks</h2>
+      <h2>🖊 Languages, Tools & Frameworks 🖊 </h2>
       <div className="skills__badgesContainer">
         <div className="skills__badges">
           <img src={C} alt="C" />

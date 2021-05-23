@@ -14,7 +14,7 @@ import Slack from "../../../assets/images/projects/slack.png";
 const Projects = () => {
   return (
     <div className="projects">
-      <h2>Projects</h2>
+      <h2>📂 Projects 📂</h2>
       <div className="experience__wrapper">
         <Project
           projectIndex="01"
@@ -162,7 +162,7 @@ const Projects = () => {
           projectGitUrl="https://github.com/RgnDunes/Let-s-Blog"
           projectDescription=""
           projectSkills={["Flask", "Python", "HTML", "CSS"]}
-          projectStartDate=""
+          projectStartDate="21 Nov, 2020"
           projectEndDate="30 Nov, 2020"
           projectType="Solo"
         />
