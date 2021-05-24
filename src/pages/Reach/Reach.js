@@ -5,11 +5,23 @@ import Whatsapp from "../../assets/images/reach/whatsapp.png";
 import Github from "../../assets/images/reach/github.png";
 import Linkedin from "../../assets/images/reach/linkedin.png";
 import Gmail from "../../assets/images/reach/gmail.png";
+import { db } from "../../firebase";
 
 const Reach = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
+
+  const handleSubmit = () => {
+    db.collection("contactme").add({
+      firstname: name,
+      email: email,
+      message: message,
+    });
+    setName("");
+    setEmail("");
+    setMessage("");
+  };
 
   return (
     <div className="contact">
@@ -42,7 +54,7 @@ const Reach = () => {
         </a>
       </div>
       <div className="contact__right">
-        <form className="contact__form" action="#">
+        <div className="contact__form" action="#">
           <input
             type="text"
             name="name"
@@ -68,8 +80,8 @@ const Reach = () => {
             placeholder="Type your message here"
             rows="6"
           ></textarea>
-          <input type="submit" value="Send" />
-        </form>
+          <input type="submit" value="Send" onClick={handleSubmit} />
+        </div>
       </div>
     </div>
   );
