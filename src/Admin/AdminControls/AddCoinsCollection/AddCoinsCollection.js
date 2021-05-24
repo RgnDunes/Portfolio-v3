@@ -1,13 +1,25 @@
 import React, { useState } from "react";
 
 import "./AddCoinsCollection.css";
+import { db } from "../../../firebase";
 
 const AddCoinsCollection = () => {
   const [coinUrl, setCoinUrl] = useState("");
+
+  const handleSubmit = () => {
+    db.collection("images")
+      .doc("IIN64O9vGJsY0lamjNsE")
+      .collection("hobbies")
+      .doc("zrzvCxmk1tsVdeMfdMA8")
+      .collection("coins")
+      .add({ url: coinUrl });
+    setCoinUrl("");
+  };
+
   return (
     <div className="addcoinscollection">
       <h2>➕ Add Coin ➕</h2>
-      <form action="#">
+      <div className="form">
         <input
           type="url"
           name="coinurl"
@@ -18,8 +30,8 @@ const AddCoinsCollection = () => {
           title="Include http://"
           required
         />
-        <input type="submit" value="Add" />
-      </form>
+        <input type="submit" value="Add" onClick={handleSubmit} />
+      </div>
     </div>
   );
 };

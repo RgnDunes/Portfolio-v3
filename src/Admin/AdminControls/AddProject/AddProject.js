@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 
 import "./AddProject.css";
+import { db } from "../../../firebase";
 
 const AddProject = () => {
   const [projectName, setProjectName] = useState("");
@@ -8,15 +9,42 @@ const AddProject = () => {
   const [projectGitUrl, setProjectGitUrl] = useState("");
   const [projectHostedUrl, setProjectHostedUrl] = useState("");
   const [projectDescription, setProjectDescription] = useState("");
-  const [projectSkills, setProjectSkills] = useState("");
+  const [projectSkills, setProjectSkills] = useState([]);
   const [projectStartDate, setProjectStartDate] = useState("");
   const [projectEndDate, setProjectEndDate] = useState("");
   const [projectType, setProjectType] = useState("");
 
+  const handleSubmit = () => {
+    var _skills = projectSkills.split(", ");
+    db.collection("images")
+      .doc("IIN64O9vGJsY0lamjNsE")
+      .collection("projects")
+      .add({
+        description: projectDescription,
+        enddate: projectEndDate,
+        giturl: projectGitUrl,
+        hostedurl: projectHostedUrl,
+        logourl: projectImage,
+        name: projectName,
+        skillname: _skills,
+        startdate: projectStartDate,
+        type: projectType,
+      });
+    setProjectName("");
+    setProjectImage("");
+    setProjectGitUrl("");
+    setProjectHostedUrl("");
+    setProjectDescription("");
+    setProjectSkills([]);
+    setProjectStartDate("");
+    setProjectEndDate("");
+    setProjectType("");
+  };
+
   return (
     <div className="addproject">
       <h2>➕ Add Project ➕</h2>
-      <form action="#">
+      <div className="form">
         <input
           type="text"
           name="projectname"
@@ -95,8 +123,8 @@ const AddProject = () => {
           placeholder="Enter the project type (solo/team)"
           required
         />
-        <input type="submit" value="Add" />
-      </form>
+        <input type="submit" value="Add" onClick={handleSubmit} />
+      </div>
     </div>
   );
 };

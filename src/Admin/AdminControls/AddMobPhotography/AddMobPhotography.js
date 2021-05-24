@@ -1,13 +1,24 @@
 import React, { useState } from "react";
+import { db } from "../../../firebase";
 
 import "./AddMobPhotography.css";
 
 const AddMobPhotography = () => {
   const [mobPhotographUrl, setMobPhotographUrl] = useState("");
+
+  const handleSubmit = () => {
+    db.collection("images")
+      .doc("IIN64O9vGJsY0lamjNsE")
+      .collection("hobbies")
+      .doc("zrzvCxmk1tsVdeMfdMA8")
+      .collection("mobPhotography")
+      .add({ url: mobPhotographUrl });
+    setMobPhotographUrl("");
+  };
   return (
     <div className="addmobilephotography">
       <h2>➕ Add Mob Photograph ➕</h2>
-      <form action="#">
+      <div className="form">
         <input
           type="url"
           name="mobphotographurl"
@@ -18,8 +29,8 @@ const AddMobPhotography = () => {
           title="Include http://"
           required
         />
-        <input type="submit" value="Add" />
-      </form>
+        <input type="submit" value="Add" onClick={handleSubmit} />
+      </div>
     </div>
   );
 };

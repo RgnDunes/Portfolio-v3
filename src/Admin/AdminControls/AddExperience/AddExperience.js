@@ -1,9 +1,11 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 import "./AddExperience.css";
+import { db } from "../../../firebase";
 
 const AddExperience = () => {
   const [companyName, setCompanyName] = useState("");
+  const [index, setIndex] = useState("");
   const [startDate, setStartDate] = useState("");
   const [endDate, setEndDate] = useState("");
   const [certificateUrl, setCertificateUrl] = useState("");
@@ -12,10 +14,34 @@ const AddExperience = () => {
   const [skills, setSkills] = useState("");
   const [description, setDescription] = useState("");
 
+  const handleSubmit = () => {
+    var _skills = skills.split(", ");
+
+    db.collection("experience").add({
+      index: index,
+      companyname: companyName,
+      startdate: startDate,
+      enddate: endDate,
+      certificateurl: certificateUrl,
+      websiteurl: websiteUrl,
+      designation: designation,
+      description: description,
+      skillname: _skills,
+    });
+    setCompanyName("");
+    setStartDate("");
+    setEndDate("");
+    setCertificateUrl("");
+    setDesignation("");
+    setDescription("");
+    setWebsiteUrl("");
+    setSkills("");
+  };
+
   return (
     <div className="addexperience">
       <h2>➕ Add Experience ➕</h2>
-      <form action="#">
+      <div className="form">
         <input
           type="text"
           name="companyname"
@@ -84,8 +110,8 @@ const AddExperience = () => {
           placeholder="Enter the skill name (eg: C, C++)"
           required
         />
-        <input type="submit" value="Add" />
-      </form>
+        <input type="submit" value="Add" onClick={handleSubmit} />
+      </div>
     </div>
   );
 };
