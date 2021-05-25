@@ -21,7 +21,7 @@ const SubBanner = () => {
           <div className="subbanner__captionHighlight"></div>
         </div>
       </div>
-      <div className="subbanner__context">
+      {/* <div className="subbanner__context">
         Hello, my name is{" "}
         <span className="subbanner__captionHighlightRed">Divyansh Singh</span>{" "}
         and I'm currently living in Prayagraj, Uttar Pradesh, India 🇮🇳 I make
@@ -34,7 +34,7 @@ const SubBanner = () => {
         <span className="subbanner__captionHighlight">
           Frontend SDE Intern at Razorpay.
         </span>
-      </div>
+      </div> */}
     </div>
   );
 };

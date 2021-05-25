@@ -38,9 +38,11 @@ const Card = ({
             : ""}
         </div>
       </div>
-      <a href={certificateUrl} target="_blank">
-        <button className="btn corousal_btn">View Docs</button>
-      </a>
+      {certificateUrl && (
+        <a href={certificateUrl} target="_blank">
+          <button className="btn corousal_btn">View Docs</button>
+        </a>
+      )}
     </div>
   );
 };

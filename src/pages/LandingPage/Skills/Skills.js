@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 
 import "./Skills.css";
+import { db } from "../../../firebase";
 import C from "../../../assets/images/skills/c.png";
 import CPlusPlus from "../../../assets/images/skills/cPlusPlus.png";
 import Python from "../../../assets/images/skills/python.png";
@@ -21,11 +22,25 @@ import Pygame from "../../../assets/images/skills/pygame.png";
 import SQLAlchemy from "../../../assets/images/skills/sqlalchemy.png";
 
 const Skills = () => {
+  const [skills, setSkills] = useState([]);
+
+  useEffect(() => {
+    db.collection("images")
+      .doc("IIN64O9vGJsY0lamjNsE")
+      .collection("skills")
+      .onSnapshot((snapshot) =>
+        setSkills(snapshot.docs.map((doc) => doc.data()))
+      );
+  }, []);
+
   return (
     <div className="skills">
       <h2>🖊 Languages, Tools & Frameworks 🖊 </h2>
       <div className="skills__badgesContainer">
         <div className="skills__badges">
+          {/* {skills?.map(({ skillname, url }) => (
+            <img key={skillname} src={url} alt={skillname} />
+          ))} */}
           <img src={C} alt="C" />
           <img src={CPlusPlus} alt="C++" />
           <img src={Python} alt="Python" />

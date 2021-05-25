@@ -2,7 +2,6 @@
   height: 80vh;
   display: grid;
   place-items: center;
-  /* background-color: red; */
 }
 
 .wrapper {
@@ -17,11 +16,12 @@
 .subbanner__photo > img {
   border: 3px solid #fff;
   border-radius: 999px;
-  max-width: 170px;
+  /* max-width: 170px; */
+  width: calc(170px + 5vw);
   vertical-align: middle;
   box-sizing: border-box;
   object-fit: contain;
-  padding-left: 20px;
+  /* padding-left: 20px; */
   margin-right: 10px;
 }
 

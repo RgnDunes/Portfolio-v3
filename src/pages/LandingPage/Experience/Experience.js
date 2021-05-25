@@ -24,7 +24,7 @@ const Experience = () => {
           companyName="Correlations.Ai"
           startDate="18 Dec, 2020"
           endDate="18 Feb, 2021"
-          certificateUrl=""
+          certificateUrl="https://drive.google.com/file/d/1He8AwBon39yv18ppmQrvaghe25wDT_9B/view?usp=sharing"
           designation="SWE Intern"
           websiteUrl="https://correlations.ai/#/home"
           skills={["ReactJS", "MongoDB", "Flask", "HTML", "CSS", "Redux"]}
@@ -35,7 +35,7 @@ const Experience = () => {
           companyName="GeeksforGeeks"
           startDate="08 Oct, 2020"
           endDate="Present"
-          certificateUrl=""
+          certificateUrl="https://drive.google.com/file/d/1RI3HrCSmbsYVbyPN7sSKkZ-Zs2dYvk2p/view?usp=sharing"
           designation="Technical Conternt Writer Intern"
           websiteUrl="https://auth.geeksforgeeks.org/user/divyansh1802intern/articles"
           skills={[
@@ -55,7 +55,7 @@ const Experience = () => {
           companyName="Taghive"
           startDate="05 Aug, 2020"
           endDate="31 Oct, 2020"
-          certificateUrl=""
+          certificateUrl="https://drive.google.com/file/d/1hZt-dRIEsQPR4dr7c1D-QllZmFhQ4SBg/view?usp=sharing"
           designation="UI/UX Intern"
           websiteUrl="https://play.google.com/store/apps/details?id=com.tag_hive.saathi.saathi&hl=en_IN&gl=US"
           skills={["Adobe XD"]}
