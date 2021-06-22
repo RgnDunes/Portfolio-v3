@@ -33,7 +33,7 @@ const Card = ({
         <p>{description}</p>
         <br />
         <div className="card__skills">
-          {skills.length > 0
+          {skills?.length > 0
             ? skills.map((skill) => <div className="card__skill">{skill}</div>)
             : ""}
         </div>

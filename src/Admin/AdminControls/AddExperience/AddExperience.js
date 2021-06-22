@@ -5,7 +5,6 @@ import { db } from "../../../firebase";
 
 const AddExperience = () => {
   const [companyName, setCompanyName] = useState("");
-  const [index, setIndex] = useState("");
   const [startDate, setStartDate] = useState("");
   const [endDate, setEndDate] = useState("");
   const [certificateUrl, setCertificateUrl] = useState("");
@@ -13,10 +12,19 @@ const AddExperience = () => {
   const [websiteUrl, setWebsiteUrl] = useState("");
   const [skills, setSkills] = useState("");
   const [description, setDescription] = useState("");
+  const [experiences, setExperiences] = useState([]);
+
+  useEffect(() => {
+    db.collection("experience")
+      .orderBy("index", "desc")
+      .onSnapshot((snapshot) =>
+        setExperiences(snapshot.docs.map((doc) => doc.data()))
+      );
+  }, []);
 
   const handleSubmit = () => {
     var _skills = skills.split(", ");
-
+    var index = experiences?.length + 1;
     db.collection("experience").add({
       index: index,
       companyname: companyName,
@@ -55,7 +63,7 @@ const AddExperience = () => {
           name="startdate"
           value={startDate}
           onChange={(e) => setStartDate(e.target.value)}
-          placeholder="Enter the start date"
+          placeholder="Enter the start date (Format : 08 Oct, 2020)"
           required
         />
         <input
@@ -63,7 +71,7 @@ const AddExperience = () => {
           name="enddate"
           value={endDate}
           onChange={(e) => setEndDate(e.target.value)}
-          placeholder="Enter the  end date"
+          placeholder="Enter the  end date (Format : 08 Oct, 2020 / Present)"
           required
         />
         <input

@@ -1,66 +1,51 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 
 import "./Experience.css";
 import Card from "../../../components/Card/Card";
+import { db } from "../../../firebase";
 
 const Experience = () => {
+  const [experiences, setExperiences] = useState([]);
+
+  useEffect(() => {
+    db.collection("experience")
+      .orderBy("index", "desc")
+      .onSnapshot((snapshot) =>
+        setExperiences(snapshot.docs.map((doc) => doc.data()))
+      );
+  }, []);
+
   return (
     <div className="experience">
       <h2>👨‍💻 Experiences 👨‍💻</h2>
       <div className="experience__wrapper">
-        <Card
-          index="01"
-          companyName="Razorpay"
-          startDate="17 May, 2021"
-          endDate="Present"
-          certificateUrl=""
-          designation="Frontend SDE Intern"
-          websiteUrl="https://razorpay.com/"
-          skills={["ReactJS", "GraphQL", "HTML", "CSS"]}
-          description="So I'm currently a Frontend SDE Intern @Razorpay."
-        />
-        <Card
-          index="02"
-          companyName="Correlations.Ai"
-          startDate="18 Dec, 2020"
-          endDate="18 Feb, 2021"
-          certificateUrl="https://drive.google.com/file/d/1He8AwBon39yv18ppmQrvaghe25wDT_9B/view?usp=sharing"
-          designation="SWE Intern"
-          websiteUrl="https://correlations.ai/#/home"
-          skills={["ReactJS", "MongoDB", "Flask", "HTML", "CSS", "Redux"]}
-          description="During this period I worked on Login Infra and Mail Services for Correlations.Ai. I worked on various frameworks including ReactJS, Python, Flask, MongoDB."
-        />
-        <Card
-          index="03"
-          companyName="GeeksforGeeks"
-          startDate="08 Oct, 2020"
-          endDate="Present"
-          certificateUrl="https://drive.google.com/file/d/1RI3HrCSmbsYVbyPN7sSKkZ-Zs2dYvk2p/view?usp=sharing"
-          designation="Technical Conternt Writer Intern"
-          websiteUrl="https://auth.geeksforgeeks.org/user/divyansh1802intern/articles"
-          skills={[
-            "Python",
-            "Database",
-            "MySQL",
-            "ReactJS",
-            "Firebase",
-            "Flask",
-            "Git",
-            "Linked List",
-          ]}
-          description="As a Technical Content Writer I've published 9 artices till date and improved two pre-existing articles on GeeksforGeeks in various technologies like, Python, Flask, ReactJS."
-        />
-        <Card
-          index="04"
-          companyName="Taghive"
-          startDate="05 Aug, 2020"
-          endDate="31 Oct, 2020"
-          certificateUrl="https://drive.google.com/file/d/1hZt-dRIEsQPR4dr7c1D-QllZmFhQ4SBg/view?usp=sharing"
-          designation="UI/UX Intern"
-          websiteUrl="https://play.google.com/store/apps/details?id=com.tag_hive.saathi.saathi&hl=en_IN&gl=US"
-          skills={["Adobe XD"]}
-          description="In this internship for I worked on the UI of ClassSaathi app which is available on Playstore for free."
-        />
+        {experiences?.map(
+          ({
+            companyname,
+            startdate,
+            enddate,
+            certificateurl,
+            designation,
+            websiteurl,
+            skillname,
+            description,
+            index,
+          }) => {
+            return (
+              <Card
+                index={experiences?.length - index + 1}
+                companyName={companyname}
+                startDate={startdate}
+                endDate={enddate}
+                certificateUrl={certificateurl}
+                designation={designation}
+                websiteUrl={websiteurl}
+                skills={skillname}
+                description={description}
+              />
+            );
+          }
+        )}
       </div>
     </div>
   );

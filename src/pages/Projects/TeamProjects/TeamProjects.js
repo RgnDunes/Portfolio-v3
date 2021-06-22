@@ -1,37 +1,60 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 
 import "./TeamProjects.css";
+import { extractIdFromDriveLink } from "../../../utils";
+import { db } from "../../../firebase";
 import Project from "../../../components/Project/Project";
-import CorruptionFreeIndia from "../../../assets/images/projects/corruptionfreeindia.png";
-import DigiBadge from "../../../assets/images/projects/digibadge.png";
 
 const TeamProjects = () => {
+  const [teamProjects, setTeamProjects] = useState([]);
+
+  useEffect(() => {
+    db.collection("images")
+      .doc("IIN64O9vGJsY0lamjNsE")
+      .collection("projects")
+      .onSnapshot((snapshot) =>
+        setTeamProjects(snapshot.docs.map((doc) => doc.data()))
+      );
+  }, []);
+
   return (
     <div className="teamProjects">
       <h2>Team Projects</h2>
       <div className="teamProjects__content">
-        <Project
-          projectIndex="01"
-          projectName="CorruptionFreeIndia"
-          projectImage={CorruptionFreeIndia}
-          projectGitUrl="https://github.com/Ankitkumar98/CorruptionFreeIndia"
-          projectDescription=""
-          projectSkills={["HTML", "CSS", "PHP", "Javascript"]}
-          projectStartDate="29 Dec, 2020"
-          projectEndDate="Present"
-          projectType="Team"
-        />
-        <Project
-          projectIndex="02"
-          projectName="DigiBadge"
-          projectImage={DigiBadge}
-          projectGitUrl="https://github.com/Ankitkumar98/DIGIBADGE"
-          projectDescription=""
-          projectSkills={["HTML", "CSS", "Javascript", "PHP"]}
-          projectStartDate="06 Nov, 2020"
-          projectEndDate="Present"
-          projectType="Team"
-        />
+        {teamProjects?.map(
+          ({
+            description,
+            name,
+            logourl,
+            giturl,
+            hostedurl,
+            skillname,
+            startdate,
+            enddate,
+            type,
+            drivelink,
+          }) => {
+            if (type == "Team") {
+              const url = drivelink
+                ? "https://drive.google.com/uc?export=view&id=" +
+                  extractIdFromDriveLink(logourl)
+                : logourl;
+              return (
+                <Project
+                  projectName={name}
+                  projectImage={url}
+                  projectGitUrl={giturl}
+                  projectHostedUrl={hostedurl}
+                  projectDescription={description}
+                  projectSkills={skillname}
+                  projectStartDate={startdate}
+                  projectEndDate={enddate}
+                  projectType={type}
+                />
+              );
+            }
+          }
+        )}
       </div>
     </div>
   );

@@ -29,6 +29,7 @@ const AddProject = () => {
         skillname: _skills,
         startdate: projectStartDate,
         type: projectType,
+        drivelink: true,
       });
     setProjectName("");
     setProjectImage("");
@@ -104,7 +105,7 @@ const AddProject = () => {
           name="projectstartdate"
           value={projectStartDate}
           onChange={(e) => setProjectStartDate(e.target.value)}
-          placeholder="Enter the project start date"
+          placeholder="Enter the project start date (Format : 08 Oct, 2020)"
           required
         />
         <input
@@ -112,7 +113,7 @@ const AddProject = () => {
           name="projectenddate"
           value={projectEndDate}
           onChange={(e) => setProjectEndDate(e.target.value)}
-          placeholder="Enter the project end date"
+          placeholder="Enter the project end date (Format : 08 Oct, 2020 / Present)"
           required
         />
         <input
@@ -120,7 +121,7 @@ const AddProject = () => {
           name="projecttype"
           value={projectType}
           onChange={(e) => setProjectType(e.target.value)}
-          placeholder="Enter the project type (solo/team)"
+          placeholder="Enter the project type (Solo/Team)"
           required
         />
         <input type="submit" value="Add" onClick={handleSubmit} />

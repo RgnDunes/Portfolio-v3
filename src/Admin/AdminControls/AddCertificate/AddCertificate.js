@@ -14,7 +14,7 @@ const AddCertificate = () => {
         url: certificateUrl,
       });
     setCertificateUrl("");
-    console.log("CERT >>> ", certificateUrl);
+    // console.log("CERT >>> ", certificateUrl);
   };
 
   return (
