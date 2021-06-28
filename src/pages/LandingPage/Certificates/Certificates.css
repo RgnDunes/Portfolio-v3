@@ -4,8 +4,6 @@
   place-items: center;
   width: 100%;
   background-size: cover;
-  /* background-image: url("../../../assets/images/backgroundSVGs/certificates.svg");
-  background-color: transparent; */
 }
 
 .certificates::after {
@@ -24,19 +22,13 @@
   font-size: calc(20px + 2vw);
   font-weight: 900;
   -webkit-text-stroke: 1px var(--indigo);
-  /* text-shadow: -1px 1px 2px #23430c, 1px 1px 2px #23430c, 1px -1px 0 #23430c,
-    -1px -1px 0 #23430c; */
   font-family: "Source Code Pro", monospace;
-  /* backdrop-filter: blur(4px); */
 }
 
 .certificates__content {
-  /* backdrop-filter: blur(4px); */
-
   position: relative;
   column-count: 4;
   padding: 20px;
-  /* background: var(--light); */
 }
 
 @media (max-width: 768px) {

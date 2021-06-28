@@ -22,7 +22,6 @@
   align-items: center;
   justify-content: space-evenly;
   width: 100%;
-  /* padding-right: 3px; */
 }
 
 .navbar__navItems > a {
@@ -30,7 +29,5 @@
 }
 
 .navbar__navItems > a:hover {
-  /* letter-spacing: 3px; */
   transform: scale(1.2);
-  /* transform: rotate3d(); */
 }
