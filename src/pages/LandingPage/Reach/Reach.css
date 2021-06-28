@@ -8,11 +8,12 @@
   display: grid;
   place-items: center;
   color: var(--primary);
-  font-size: calc(20px + 5vw);
+  font-size: calc(20px + 2vw);
   font-weight: 900;
   -webkit-text-stroke: 1px var(--indigo);
-  text-shadow: -1px 1px 2px #23430c, 1px 1px 2px #23430c, 1px -1px 0 #23430c,
-    -1px -1px 0 #23430c;
+  /* text-shadow: -1px 1px 2px #23430c, 1px 1px 2px #23430c, 1px -1px 0 #23430c,
+    -1px -1px 0 #23430c; */
+  font-family: "Source Code Pro", monospace;
 }
 
 .reach__content {
@@ -40,19 +41,21 @@ a {
 button {
   outline: none;
   border: none;
+  border-radius: 999px;
 }
 
 button > img {
   object-fit: contain;
   width: 40px;
-  transition: all 0.25s linear;
+  transition: all 0.2s ease-in-out;
 }
 
 button > img:hover {
-  padding: 10px;
-  margin-bottom: 5px;
+  /* padding: 10px; */
+  /* margin-bottom: 5px; */
   text-align: center;
-  box-shadow: 10px 10px 10px 3px rgb(21 21 21 / 20%);
-  background-color: #dee2ff;
-  border-radius: 999px;
+  /* box-shadow: 10px 10px 10px 3px rgb(21 21 21 / 20%);
+  background-color: #dee2ff; */
+  /* border-radius: 999px; */
+  transform: scale(1.1);
 }

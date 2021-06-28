@@ -24,3 +24,13 @@
   width: 100%;
   /* padding-right: 3px; */
 }
+
+.navbar__navItems > a {
+  transition: all 100ms linear;
+}
+
+.navbar__navItems > a:hover {
+  /* letter-spacing: 3px; */
+  transform: scale(1.2);
+  /* transform: rotate3d(); */
+}

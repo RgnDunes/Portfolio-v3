@@ -61,6 +61,7 @@
   padding: 5px;
   padding-bottom: 20px;
   border-radius: 11px;
+  background-color: var(--light);
 }
 
 .card:nth-of-type(odd):hover .card__contentbox {

@@ -1,7 +1,7 @@
 import React from "react";
 
 import "./SubBanner.css";
-import MyPhoto from "../../../../assets/images/photos/myPhotoBrownWhiteBg.png";
+import MyPhoto from "../../../../assets/images/photos/myPhotoBlackBgAscii.jpeg";
 
 const SubBanner = () => {
   return (
@@ -12,10 +12,10 @@ const SubBanner = () => {
         </div>
         <div className="subbanner__caption">
           <div className="subbanner__captionSmall">Hi, I'm a</div>
-          <div className="subbanner__captionLarge">
+          <div className="subbanner__captionLarge typo__style">
             <span className="subbanner__captionLargeSpan">{"<"}</span>
             Web Developer
-            <span className="subbanner__captionLargeSpan">{"/>"}</span>
+            <span className="subbanner__captionLargeSpan">{" />"}</span>
           </div>
 
           <div className="subbanner__captionHighlight"></div>

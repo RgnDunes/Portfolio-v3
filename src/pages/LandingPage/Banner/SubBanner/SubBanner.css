@@ -1,5 +1,5 @@
 .subbanner {
-  height: 80vh;
+  height: 84.5vh;
   display: grid;
   place-items: center;
 }
@@ -11,25 +11,38 @@
   width: 100%;
   padding: 20px;
   padding-bottom: 0px;
+  background-color: transparent;
+  position: relative;
+}
+
+.wrapper::after {
+  content: "";
+  position: absolute;
+  background-color: pink;
+  width: 40%;
+  border-radius: 999px;
+  padding-bottom: 140%;
+  transform: rotate(70deg);
+  z-index: -1;
+}
+
+.subbanner__photo {
+  background-color: transparent;
 }
 
 .subbanner__photo > img {
   border: 3px solid #fff;
   border-radius: 999px;
-  /* max-width: 170px; */
   width: calc(170px + 5vw);
   vertical-align: middle;
   box-sizing: border-box;
   object-fit: contain;
-  /* padding-left: 20px; */
   margin-right: 10px;
 }
 
 .subbanner__caption {
   align-items: justify;
-  /* padding-left: 20px; */
-  /* animation: animate 0.6s cubic-bezier(0.2, 0.6, 0.2, 1);
-  animation-fill-mode: backwards; */
+  background-color: transparent;
 }
 
 .subbanner__context {
@@ -44,22 +57,26 @@
   color: var(--dark);
   font-weight: 790;
   font-size: calc(17px + 1.8vw);
+  background-color: transparent !important;
 }
 
 .subbanner__captionLarge {
-  color: var(--primary);
   font-size: 8vw;
   font-weight: 900;
-  -webkit-text-stroke: 1px var(--indigo);
-  text-shadow: -1px 1px 2px #23430c, 1px 1px 2px #23430c, 1px -1px 0 #23430c,
-    -1px -1px 0 #23430c;
+  background-image: url("../../../../assets/images/logo/vscode.png");
+  background-size: cover;
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  font-family: "Source Code Pro", monospace;
 }
 
 .subbanner__captionLargeSpan {
-  color: var(--indigo);
-  -webkit-text-stroke: 1px var(--primary);
-  text-shadow: -1px 1px 2px #23430c, 1px 1px 2px #23430c, 1px -1px 0 #23430c,
-    -1px -1px 0 #23430c;
+  background-image: url("../../../../assets/images/logo/vscode.png");
+  background-size: cover;
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
 }
 
 .subbanner__captionMinor {
@@ -68,14 +85,51 @@
 
 .subbanner__captionHighlight {
   color: var(--teal);
-  /* font-size: 3vw; */
   font-size: calc(12px + 2vw);
   font-weight: 800;
 }
 
 .subbanner__captionHighlightRed {
   color: var(--red);
-  /* font-size: 3vw; */
   font-size: calc(12px + 2vw);
   font-weight: 800;
 }
+/* 
+.typo__style {
+  position: relative;
+  width: max-content;
+  font-family: "Source Code Pro", monospace;
+}
+
+.typo__style::before,
+.typo__style::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.typo__style::before {
+  background: var(--light);
+  animation: typewriter 6s steps(16) 1s forwards;
+}
+
+.typo__style::after {
+  width: 0.125em;
+  background: black;
+  animation: typewriter 6s steps(16) 1s forwards, blink 750ms steps(16) infinite;
+}
+
+@keyframes typewriter {
+  to {
+    left: 100%;
+  }
+}
+
+@keyframes blink {
+  to {
+    background: transparent;
+  }
+} */

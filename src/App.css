@@ -30,6 +30,8 @@ body {
     "Segoe UI Emoji", "Segoe UI Symbol";
   --font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas,
     "Liberation Mono", "Courier New", monospace;
+  --typewriterSpeed: 4s;
+  /* --typewriterCharacters: 13; */
 }
 
 html,
@@ -41,7 +43,8 @@ body {
 
 * {
   margin: 0;
-  background-color: var(--light);
+  /* background-color: var(--light); */
+  /* background-color: pink; */
 }
 
 .app {
